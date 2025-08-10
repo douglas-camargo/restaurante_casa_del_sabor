@@ -30,7 +30,7 @@ const Hero = () => {
           "name": "La Casa del Sabor",
           "description": "Restaurante gourmet especializado en cocina tradicional venezolana",
           "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-          "url": "https://lacasadelsabor.com",
+          "url": "https://restaurante-casa-del-sabor.vercel.app",
           "telephone": "+58 0424 123 2755",
           "address": {
             "@type": "PostalAddress",

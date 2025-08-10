@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://lacasadelsabor.com/sitemap.xml
+Sitemap: https://restaurante-casa-del-sabor.vercel.app/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1
