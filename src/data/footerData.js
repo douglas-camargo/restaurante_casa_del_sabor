@@ -1,0 +1,38 @@
+import { Facebook, Instagram, Twitter, Youtube } from 'lucide-react';
+
+export const footerLinks = {
+  restaurant: [
+    { name: 'Nuestro Menú', href: '#menu' },
+    { name: 'Sobre Nosotros', href: '#about' },
+    { name: 'Reservas', href: '#reservation' },
+    { name: 'Contacto', href: '#contact' }
+  ],
+  services: [
+    { name: 'Eventos Privados', href: '#' },
+    { name: 'Catering', href: '#' },
+    { name: 'Clases de Cocina', href: '#' },
+    { name: 'Delivery', href: '#' }
+  ],
+  legal: [
+    { name: 'Política de Privacidad', href: '#' },
+    { name: 'Términos de Servicio', href: '#' },
+    { name: 'Política de Cookies', href: '#' },
+    { name: 'Aviso Legal', href: '#' }
+  ]
+};
+
+export const socialLinks = [
+  { icon: Facebook, href: '#', label: 'Facebook' },
+  { icon: Instagram, href: '#', label: 'Instagram' },
+  { icon: Twitter, href: '#', label: 'Twitter' },
+  { icon: Youtube, href: '#', label: 'YouTube' }
+];
+
+export const restaurantInfo = {
+  name: 'La Casa del Sabor',
+  description: 'Descubre la auténtica cocina gourmet con ingredientes frescos y técnicas culinarias tradicionales.',
+  address: '123 Calle Principal, Ciudad',
+  phone: '+1 (555) 123-4567',
+  email: 'info@lacasadelsabor.com',
+  hours: 'Lun-Dom 12:00-23:00'
+};

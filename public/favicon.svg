@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Casa -->
+  <path d="M16 2L2 12v18h28V12L16 2z" fill="#8B4513"/>
+  <path d="M16 2L2 12h28L16 2z" fill="#A0522D"/>
+  
+  <!-- Tejado -->
+  <path d="M2 12L16 2L30 12L16 22L2 12z" fill="#CD853F"/>
+  
+  <!-- Puerta -->
+  <rect x="14" y="18" width="4" height="8" fill="#8B4513"/>
+  <circle cx="16" cy="22" r="0.5" fill="#FFD700"/>
+  
+  <!-- Ventana -->
+  <rect x="6" y="14" width="4" height="4" fill="#87CEEB"/>
+  <rect x="22" y="14" width="4" height="4" fill="#87CEEB"/>
+  
+  <!-- Chimenea -->
+  <rect x="20" y="8" width="2" height="6" fill="#8B4513"/>
+  <rect x="19" y="6" width="4" height="2" fill="#A0522D"/>
+  
+  <!-- Humo -->
+  <circle cx="21" cy="5" r="0.5" fill="#C0C0C0" opacity="0.7"/>
+  <circle cx="21.5" cy="4" r="0.3" fill="#C0C0C0" opacity="0.5"/>
+  
+  <!-- Tenedor y cuchillo -->
+  <g transform="translate(8, 24)">
+    <!-- Tenedor -->
+    <rect x="0" y="0" width="0.5" height="4" fill="#FFD700"/>
+    <rect x="-0.5" y="0" width="0.5" height="4" fill="#FFD700"/>
+    <rect x="0.5" y="0" width="0.5" height="4" fill="#FFD700"/>
+    <rect x="0" y="3.5" width="1.5" height="0.5" fill="#FFD700"/>
+  </g>
+  
+  <g transform="translate(20, 24)">
+    <!-- Cuchillo -->
+    <rect x="0" y="0" width="0.5" height="4" fill="#FFD700"/>
+    <path d="M0 0L1 1L0 2L0 0z" fill="#FFD700"/>
+  </g>
+  
+  <!-- Plato -->
+  <circle cx="16" cy="26" r="2" fill="#FFFFFF" stroke="#FFD700" stroke-width="0.2"/>
+  <circle cx="16" cy="26" r="1.5" fill="none" stroke="#FFD700" stroke-width="0.1"/>
+</svg>
