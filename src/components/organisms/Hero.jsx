@@ -12,12 +12,12 @@ const Hero = () => {
   return (
     <section 
       id="home"
-      className="relative min-h-screen flex-center overflow-hidden"
+      className="relative min-h-screen flex-center overflow-hidden w-full"
       style={{
         background: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
+        backgroundAttachment: 'scroll'
       }}
       role="banner"
       aria-label="Página principal del restaurante"
@@ -49,9 +49,9 @@ const Hero = () => {
       </script>
 
       {/* Animated Background Elements */}
-      <div className="absolute inset-0" aria-hidden="true">
+      <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
         <motion.div
-          className="absolute top-20 left-20 w-32 h-32 bg-primary-500/20 rounded-full blur-xl"
+          className="absolute top-20 left-4 md:left-20 w-24 h-24 md:w-32 md:h-32 bg-primary-500/20 rounded-full blur-xl"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.6, 0.3],
@@ -63,7 +63,7 @@ const Hero = () => {
           }}
         />
         <motion.div
-          className="absolute bottom-20 right-20 w-40 h-40 bg-primary-600/20 rounded-full blur-xl"
+          className="absolute bottom-20 right-4 md:right-20 w-28 h-28 md:w-40 md:h-40 bg-primary-600/20 rounded-full blur-xl"
           animate={{
             scale: [1.2, 1, 1.2],
             opacity: [0.4, 0.7, 0.4],
@@ -77,19 +77,19 @@ const Hero = () => {
       </div>
 
       {/* Main Content */}
-      <div className={`${layoutClasses.container} text-center relative z-10`}>
+      <div className={`${layoutClasses.container} text-center relative z-10 w-full`}>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto"
+          className="max-w-4xl mx-auto w-full"
         >
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="badge mb-6"
+            className="badge mb-8 md:mb-6 mt-16 md:mt-0"
             role="status"
             aria-label="Certificación de calidad"
           >
@@ -102,7 +102,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className={`${typographyClasses.heading1} text-white mb-6 leading-tight`}
+            className={`${typographyClasses.heading1} text-white mb-6 leading-tight px-4`}
           >
             {heroContent.title}{' '}
             <span className="text-gradient">{heroContent.subtitle}</span>
@@ -113,7 +113,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className={`${typographyClasses.body} text-gray-200 mb-8 max-w-2xl mx-auto`}
+            className={`${typographyClasses.body} text-gray-200 mb-8 max-w-2xl mx-auto px-4`}
           >
             {heroContent.description}
           </motion.p>
@@ -123,7 +123,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 px-4"
             role="group"
             aria-label="Acciones principales"
           >
@@ -152,16 +152,16 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="grid grid-cols-3 gap-8 max-w-2xl mx-auto"
+            className="grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto px-4"
             role="region"
             aria-label="Estadísticas del restaurante"
           >
             {heroStats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl font-bold text-white mb-1" aria-label={`${stat.number} ${stat.label}`}>
+                <div className="text-2xl md:text-3xl font-bold text-white mb-1" aria-label={`${stat.number} ${stat.label}`}>
                   {stat.number}
                 </div>
-                <div className="text-gray-300 text-sm">{stat.label}</div>
+                <div className="text-gray-300 text-xs md:text-sm">{stat.label}</div>
               </div>
             ))}
           </motion.div>
@@ -173,7 +173,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
-        className="absolute-center bottom-8"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
         <motion.button
           onClick={() => scrollToElement('menu')}
