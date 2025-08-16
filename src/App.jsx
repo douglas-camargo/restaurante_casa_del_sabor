@@ -9,9 +9,9 @@ import Footer from './components/templates/Footer';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App overflow-x-hidden w-full max-w-full">
       <Navbar />
-      <main>
+      <main className="overflow-x-hidden w-full">
         <Hero />
         <MenuSection />
         <AboutSection />

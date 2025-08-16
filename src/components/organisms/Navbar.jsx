@@ -9,6 +9,9 @@ const Navbar = () => {
   const { isScrolled, isMobileMenuOpen, toggleMobileMenu, scrollToSection } = useNavbar();
   const { handleWhatsAppClick } = useWhatsApp('reservation');
 
+  // Debug temporal
+  console.log('isMobileMenuOpen:', isMobileMenuOpen);
+
   const navItems = [
     { name: 'Inicio', id: 'home' },
     { name: 'Menú', id: 'menu' },
@@ -78,49 +81,50 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <motion.button
-            className="md:hidden p-2"
+          <button
+            className="md:hidden p-2 z-50"
             onClick={toggleMobileMenu}
-            whileTap={{ scale: 0.95 }}
+            aria-label={isMobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
           >
             <Icon 
               icon={isMobileMenuOpen ? X : Menu} 
               size={24} 
               color={isScrolled ? '#64748b' : '#ffffff'} 
             />
-          </motion.button>
+          </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <>
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 bg-black/50 z-40 md:hidden"
+            onClick={toggleMobileMenu}
+          />
+          
+          {/* Mobile Menu */}
+          <div
+            className="fixed top-16 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-gray-200 z-50 md:hidden"
           >
-            <div className="container-custom py-4 space-y-4">
-              {navItems.map((item) => (
-                <motion.button
+            <div className="container-custom py-6 space-y-2">
+              {navItems.map((item, index) => (
+                <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left text-gray-700 hover:text-primary-600 font-medium py-2"
-                  whileHover={{ x: 10 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="block w-full text-left text-gray-700 hover:text-primary-600 font-medium py-3 px-2 rounded-lg hover:bg-gray-50 transition-colors"
                 >
                   {item.name}
-                </motion.button>
+                </button>
               ))}
               
-              <div className="pt-4 border-t border-gray-200">
-                <div className="flex items-center space-x-2 text-sm text-gray-600 mb-4">
+              <div className="pt-6 border-t border-gray-200 mt-4">
+                <div className="flex items-center space-x-3 text-sm text-gray-600 mb-4">
                   <Icon icon={Phone} size={16} />
                   <span>+58 0424 123 2755</span>
                 </div>
-                <div className="flex items-center space-x-2 text-sm text-gray-600 mb-4">
+                <div className="flex items-center space-x-3 text-sm text-gray-600 mb-6">
                   <Icon icon={MapPin} size={16} />
                   <span>123 Calle Principal, Ciudad</span>
                 </div>
@@ -134,9 +138,9 @@ const Navbar = () => {
                 </Button>
               </div>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+        </>
+      )}
     </motion.nav>
   );
 };
