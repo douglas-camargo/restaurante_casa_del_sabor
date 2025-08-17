@@ -39,7 +39,7 @@ const ContactSection = () => {
               Información de <span className="text-gradient">Contacto</span>
             </h3>
 
-            <div className="space-y-6 w-full max-w-md lg:max-w-none">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 sm:gap-x-24 lg:gap-x-6 w-full max-w-md lg:max-w-none">
               {contactInfo.map((info, index) => (
                 <motion.div
                   key={index}

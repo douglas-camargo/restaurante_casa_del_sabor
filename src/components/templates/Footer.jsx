@@ -13,13 +13,12 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container-custom py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {/* Restaurant Info */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-x-24 text-center sm:text-left">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-1"
+                         className="lg:col-span-2"
           >
             <h3 className="font-serif text-2xl font-bold text-white mb-4">
               {restaurantInfo.name}
@@ -29,33 +28,34 @@ const Footer = () => {
             </p>
             
             <div className="space-y-3">
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-3 justify-center sm:justify-start">
                 <Icon icon={MapPin} size={16} color="#9ca3af" />
                 <span className="text-gray-300 text-sm">{restaurantInfo.address}</span>
               </div>
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-3 justify-center sm:justify-start">
                 <Icon icon={Phone} size={16} color="#9ca3af" />
                 <span className="text-gray-300 text-sm">{restaurantInfo.phone}</span>
               </div>
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-3 justify-center sm:justify-start">
                 <Icon icon={Mail} size={16} color="#9ca3af" />
                 <span className="text-gray-300 text-sm">{restaurantInfo.email}</span>
               </div>
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-3 justify-center sm:justify-start">
                 <Icon icon={Clock} size={16} color="#9ca3af" />
                 <span className="text-gray-300 text-sm">{restaurantInfo.hours}</span>
               </div>
             </div>
           </motion.div>
 
-          {/* Restaurant Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <h4 className="font-semibold text-white mb-4">Restaurante</h4>
-            <ul className="space-y-2">
+                     {/* Restaurant Links */}
+           <motion.div
+             initial={{ opacity: 0, y: 30 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.6, delay: 0.1 }}
+             className="sm:flex sm:flex-col sm:items-end lg:items-start items-center lg:col-span-1"
+           >
+            <h4 className="font-semibold text-white mb-4 sm:w-2/4 lg:w-full w-full ">Restaurante</h4>
+            <ul className="space-y-2 sm:w-2/4 lg:w-full w-full">
               {footerLinks.restaurant.map((link, index) => (
                 <li key={index}>
                   {link.name === 'Reservas' ? (
@@ -78,12 +78,13 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Services Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
+                     {/* Services Links */}
+           <motion.div
+             initial={{ opacity: 0, y: 30 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.6, delay: 0.2 }}
+             className="lg:col-span-1"
+           >
             <h4 className="font-semibold text-white mb-4">Servicios</h4>
             <ul className="space-y-2">
               {footerLinks.services.map((link, index) => (
@@ -99,14 +100,15 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Legal Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <h4 className="font-semibold text-white mb-4">Legal</h4>
-            <ul className="space-y-2">
+                     {/* Legal Links */}
+           <motion.div
+             initial={{ opacity: 0, y: 30 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.6, delay: 0.3 }}
+             className="sm:flex sm:flex-col sm:items-end lg:items-start items-center lg:col-span-1"
+           >
+            <h4 className="font-semibold text-white mb-4  sm:w-2/4 lg:w-full w-full">Legal</h4>
+            <ul className="space-y-2 sm:w-2/4 lg:w-full w-full">
               {footerLinks.legal.map((link, index) => (
                 <li key={index}>
                   <a
