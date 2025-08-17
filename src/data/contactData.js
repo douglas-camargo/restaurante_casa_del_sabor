@@ -27,9 +27,9 @@ export const contactInfo = [
 ];
 
 export const socialLinks = [
-  { icon: Facebook, href: '#', label: 'Facebook' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Twitter, href: '#', label: 'Twitter' }
+  { icon: Facebook, href: 'https://www.facebook.com/', label: 'Facebook' },
+  { icon: Instagram, href: 'https://www.instagram.com/', label: 'Instagram' },
+  { icon: Twitter, href: 'https://twitter.com/', label: 'Twitter' }
 ];
 
 export const whatsAppConfig = {

@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone, MapPin } from 'lucide-react';
+import { Menu, X, MapPin } from 'lucide-react';
 import { useNavbar } from '../../hooks/useNavbar';
 import { useWhatsApp } from '../../hooks/useWhatsApp';
 import Button from '../atoms/Button';
@@ -16,7 +16,6 @@ const Navbar = () => {
     { name: 'Inicio', id: 'home' },
     { name: 'Menú', id: 'menu' },
     { name: 'Nosotros', id: 'about' },
-    { name: 'Reservas', id: 'reservation' },
     { name: 'Testimonios', id: 'testimonials' },
     { name: 'Contacto', id: 'contact' }
   ];
@@ -36,8 +35,9 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <motion.div
-            className="flex items-center"
+            className="flex items-center cursor-pointer"
             whileHover={{ scale: 1.05 }}
+            onClick={() => scrollToSection('home')}
           >
             <h1 className={`font-serif text-2xl md:text-3xl font-bold ${
               isScrolled ? 'text-primary-600' : 'text-white'
@@ -65,12 +65,6 @@ const Navbar = () => {
 
           {/* Contact Info & CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <div className="flex items-center space-x-2 text-sm">
-              <Icon icon={Phone} size={16} color={isScrolled ? '#64748b' : '#ffffff'} />
-              <span className={isScrolled ? 'text-gray-600' : 'text-white'}>
-                +58 0424 123 2755
-              </span>
-            </div>
             <Button 
               variant="primary" 
               size="sm"
@@ -120,10 +114,6 @@ const Navbar = () => {
               ))}
               
               <div className="pt-6 border-t border-gray-200 mt-4">
-                <div className="flex items-center space-x-3 text-sm text-gray-600 mb-4">
-                  <Icon icon={Phone} size={16} />
-                  <span>+58 0424 123 2755</span>
-                </div>
                 <div className="flex items-center space-x-3 text-sm text-gray-600 mb-6">
                   <Icon icon={MapPin} size={16} />
                   <span>123 Calle Principal, Ciudad</span>

@@ -3,10 +3,12 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import Icon from '../atoms/Icon';
 import { footerLinks, socialLinks, restaurantInfo } from '../../data/footerData';
 import { useScrollTo } from '../../hooks/useScrollTo';
+import { useWhatsApp } from '../../hooks/useWhatsApp';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const { scrollToElement } = useScrollTo();
+  const { handleWhatsAppClick } = useWhatsApp('reservation');
 
   return (
     <footer className="bg-gray-900 text-white">
@@ -56,12 +58,21 @@ const Footer = () => {
             <ul className="space-y-2">
               {footerLinks.restaurant.map((link, index) => (
                 <li key={index}>
-                  <button
-                    onClick={() => scrollToElement(link.href.replace('#', ''))}
-                    className="text-gray-300 hover:text-primary-400 transition-colors text-sm"
-                  >
-                    {link.name}
-                  </button>
+                  {link.name === 'Reservas' ? (
+                    <button
+                      onClick={handleWhatsAppClick}
+                      className="text-gray-300 hover:text-primary-400 transition-colors text-sm"
+                    >
+                      {link.name}
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => scrollToElement(link.href.replace('#', ''))}
+                      className="text-gray-300 hover:text-primary-400 transition-colors text-sm"
+                    >
+                      {link.name}
+                    </button>
+                  )}
                 </li>
               ))}
             </ul>
@@ -124,6 +135,8 @@ const Footer = () => {
                 <motion.a
                   key={index}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}

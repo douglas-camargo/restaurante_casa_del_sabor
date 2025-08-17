@@ -33,24 +33,25 @@ const ContactSection = () => {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            className="lg:col-start-1 lg:col-end-2 flex flex-col items-center lg:items-start text-center lg:text-left"
           >
             <h3 className="text-2xl font-serif font-bold text-gray-900 mb-8">
               Información de <span className="text-gradient">Contacto</span>
             </h3>
 
-            <div className="space-y-6">
+            <div className="space-y-6 w-full max-w-md lg:max-w-none">
               {contactInfo.map((info, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="flex items-start space-x-4"
+                  className="flex flex-col lg:flex-row items-center lg:items-start space-y-3 lg:space-y-0 lg:space-x-4 text-center lg:text-left"
                 >
                   <div className="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
                     <Icon icon={info.icon} size={24} color="#ed7519" />
                   </div>
-                  <div>
+                  <div className="flex flex-col items-center lg:items-start">
                     <h4 className="font-semibold text-gray-900 mb-1">{info.title}</h4>
                     {info.link ? (
                       <a
@@ -74,14 +75,16 @@ const ContactSection = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-8"
+              className="mt-8 w-full"
             >
-              <h4 className="font-semibold text-gray-900 mb-4">Síguenos</h4>
-              <div className="flex space-x-4">
+              <h4 className="font-semibold text-gray-900 mb-4 text-center lg:text-left">Síguenos</h4>
+              <div className="flex space-x-4 justify-center lg:justify-start">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={index}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center hover:bg-primary-200 transition-colors"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
@@ -100,9 +103,9 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h3 className="text-2xl font-serif font-bold text-gray-900 mb-8">
-              Contáctanos por <span className="text-gradient">WhatsApp</span>
-            </h3>
+                         <h3 className="text-2xl font-serif font-bold text-gray-900 mb-8 text-center lg:text-left">
+               Contáctanos por <span className="text-gradient">WhatsApp</span>
+             </h3>
 
             <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 border border-green-200">
               <div className="text-center mb-6">
