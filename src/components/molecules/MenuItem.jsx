@@ -27,6 +27,7 @@ const MenuItem = ({
           src={image} 
           alt={name}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          cssImage="w-full"
           width={400}
           height={192}
         />

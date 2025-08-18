@@ -12,12 +12,6 @@ export const footerLinks = {
     { name: 'Catering', href: '#' },
     { name: 'Clases de Cocina', href: '#' },
     { name: 'Delivery', href: '#' }
-  ],
-  legal: [
-    { name: 'Política de Privacidad', href: '#' },
-    { name: 'Términos de Servicio', href: '#' },
-    { name: 'Política de Cookies', href: '#' },
-    { name: 'Aviso Legal', href: '#' }
   ]
 };
 

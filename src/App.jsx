@@ -1,6 +1,7 @@
 import Navbar from './components/organisms/Navbar';
 import Hero from './components/organisms/Hero';
 import MenuSection from './components/organisms/MenuSection';
+import GallerySection from './components/templates/GallerySection';
 import AboutSection from './components/templates/AboutSection';
 import TestimonialsSection from './components/templates/TestimonialsSection';
 import ContactSection from './components/templates/ContactSection';
@@ -13,6 +14,7 @@ function App() {
       <main className="overflow-x-hidden w-full">
         <Hero />
         <MenuSection />
+        <GallerySection />
         <AboutSection />
         <TestimonialsSection />
         <ContactSection />

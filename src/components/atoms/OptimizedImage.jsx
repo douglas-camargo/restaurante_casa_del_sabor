@@ -8,6 +8,7 @@ const OptimizedImage = ({
   height, 
   priority = false,
   sizes = "100vw",
+  cssImage = '',
   ...props 
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -45,7 +46,7 @@ const OptimizedImage = ({
         loading={priority ? "eager" : "lazy"}
         onLoad={handleLoad}
         onError={handleError}
-        className={`transition-opacity duration-300 ${
+        className={`transition-opacity duration-300 ${cssImage} ${
           isLoaded ? 'opacity-100' : 'opacity-0'
         }`}
         {...props}

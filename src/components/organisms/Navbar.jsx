@@ -15,6 +15,7 @@ const Navbar = () => {
   const navItems = [
     { name: 'Inicio', id: 'home' },
     { name: 'Menú', id: 'menu' },
+    { name: 'Galería', id: 'galeria' },
     { name: 'Nosotros', id: 'about' },
     { name: 'Testimonios', id: 'testimonials' },
     { name: 'Contacto', id: 'contact' }
@@ -25,6 +26,8 @@ const Navbar = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white/95 backdrop-blur-md shadow-lg' 
+          : isMobileMenuOpen
+          ? 'bg-white/95 backdrop-blur-md shadow-lg'
           : 'bg-transparent'
       }`}
       initial={{ y: -100 }}
@@ -40,14 +43,14 @@ const Navbar = () => {
             onClick={() => scrollToSection('home')}
           >
             <h1 className={`font-serif text-2xl md:text-3xl font-bold ${
-              isScrolled ? 'text-primary-600' : 'text-white'
+              isScrolled || isMobileMenuOpen ? 'text-primary-600' : 'text-white'
             }`}>
               La Casa del Sabor
             </h1>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
               <motion.button
                 key={item.id}
@@ -64,7 +67,7 @@ const Navbar = () => {
           </div>
 
           {/* Contact Info & CTA */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-4">
             <Button 
               variant="primary" 
               size="sm"
@@ -76,14 +79,14 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 z-50"
+            className="lg:hidden p-2 z-50"
             onClick={toggleMobileMenu}
             aria-label={isMobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
           >
             <Icon 
               icon={isMobileMenuOpen ? X : Menu} 
               size={24} 
-              color={isScrolled ? '#64748b' : '#ffffff'} 
+              color={isScrolled || isMobileMenuOpen ? '#1f2937' : '#ffffff'} 
             />
           </button>
         </div>
@@ -94,13 +97,13 @@ const Navbar = () => {
         <>
           {/* Backdrop */}
           <div
-            className="fixed inset-0 bg-black/50 z-40 md:hidden"
+            className="fixed inset-0 bg-black/50 z-40 lg:hidden"
             onClick={toggleMobileMenu}
           />
           
           {/* Mobile Menu */}
           <div
-            className="fixed top-16 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-gray-200 z-50 md:hidden"
+            className="fixed top-16 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-gray-200 z-50 lg:hidden"
           >
             <div className="container-custom py-6 space-y-2">
               {navItems.map((item, index) => (
@@ -114,10 +117,6 @@ const Navbar = () => {
               ))}
               
               <div className="pt-6 border-t border-gray-200 mt-4">
-                <div className="flex items-center space-x-3 text-sm text-gray-600 mb-6">
-                  <Icon icon={MapPin} size={16} />
-                  <span>123 Calle Principal, Ciudad</span>
-                </div>
                 <Button 
                   variant="primary" 
                   size="sm"
