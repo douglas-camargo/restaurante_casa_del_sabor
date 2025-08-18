@@ -5,7 +5,7 @@ import { aboutValues, restaurantStats, aboutContent } from '../../data/aboutData
 
 const AboutSection = () => {
   return (
-    <section id="about" className="section-padding bg-white">
+    <section id="about" className="section-padding bg-white overflow-hidden">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}
@@ -55,12 +55,12 @@ const AboutSection = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             </div>
             
-            {/* Floating Card */}
+            {/* Floating Card - Ajustado para móviles */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-6 max-w-xs"
+              className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-6 max-w-xs lg:max-w-xs md:max-w-[280px] sm:max-w-[260px] xs:max-w-[240px]"
             >
               <div className="flex items-center space-x-3 mb-3">
                 <OptimizedImage 
